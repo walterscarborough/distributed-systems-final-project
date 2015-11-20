@@ -82,9 +82,11 @@ namespace DistributedTestEnvironmentUI.Models
             if (tmpNode == null)
                 return;
             tmpNode.addProcess(ProcName, tmpNode.FrameworkNodeName, Path, Port + 10000, true);
+            DistributedProcessModel tmpProcess = tmpNode.getProcess(ProcName, Port + 10000);
             foreach(string arg in arguments)
-              tmpNode.getProcess(ProcName, Port + 10000).addArgurment(arg);
-            
+                tmpProcess.addArgurment(arg);
+            tmpProcess.FrameworkHost = tmpNode.NodeName;
+            tmpProcess.FrameworkPort = Port;
           
         }
         public void removeProcess(string ProcName, string HostName, int Port)
@@ -117,66 +119,66 @@ namespace DistributedTestEnvironmentUI.Models
         
         public void setDelay(DistributedProcessModel proc, int delay) 
         {
-            proc.Routing.faults.Delay_ms = delay;
+            proc.Routing.Faults.Delay_ms = delay;
         }
 
         public void enableDelay(DistributedProcessModel proc)
         {
-            proc.Routing.faults.DelayMessage = true;
+            proc.Routing.Faults.DelayMessage = true;
         }
 
         public void disableDelay(DistributedProcessModel proc)
         {
-            proc.Routing.faults.DelayMessage = false;
+            proc.Routing.Faults.DelayMessage = false;
         }
 
         public void disableProcess(DistributedProcessModel proc) 
         {
-            proc.Routing.faults.Disable_process = true;
+            proc.Routing.Faults.Disable_process = true;
         }
         public void enableProcess(DistributedProcessModel proc) 
         {
-            proc.Routing.faults.Disable_process = false;
+            proc.Routing.Faults.Disable_process = false;
         }
 
         public void duplicateMessage(DistributedProcessModel proc) 
         {
-            proc.Routing.faults.DelayMessage = true;
+            proc.Routing.Faults.DelayMessage = true;
         }
 
         public void stopDuplicate(DistributedProcessModel proc) 
         {
-            proc.Routing.faults.DelayMessage = false;
+            proc.Routing.Faults.DelayMessage = false;
         }
 
         public void corruptMessage(DistributedProcessModel proc)
         {
-            proc.Routing.faults.CorruptMessage = true;
+            proc.Routing.Faults.CorruptMessage = true;
         }
 
         public void stopCorrupt(DistributedProcessModel proc)
         {
-            proc.Routing.faults.CorruptMessage = false;
+            proc.Routing.Faults.CorruptMessage = false;
         }
 
         public void loseMessage(DistributedProcessModel proc)
         {
-            proc.Routing.faults.LoseMessage = true;
+            proc.Routing.Faults.LoseMessage = true;
         }
 
         public void disableLose(DistributedProcessModel proc)
         {
-            proc.Routing.faults.LoseMessage = false;
+            proc.Routing.Faults.LoseMessage = false;
         }
 
         public void outofOrder(DistributedProcessModel proc)
         {
-            proc.Routing.faults.ReverseOrderMessage = true;
+            proc.Routing.Faults.ReverseOrderMessage = true;
         }
 
         public void disableoutofOrder(DistributedProcessModel proc)
         {
-            proc.Routing.faults.ReverseOrderMessage = false;
+            proc.Routing.Faults.ReverseOrderMessage = false;
         }
     }
 }

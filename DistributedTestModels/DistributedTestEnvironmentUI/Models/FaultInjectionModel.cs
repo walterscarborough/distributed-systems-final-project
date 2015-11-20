@@ -4,66 +4,83 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using DistributedTestEnvironmentUI.MVVM_Tools;
 
 namespace DistributedTestEnvironmentUI.Models
 {
-    public class FaultInjectionModel
+    public class FaultInjectionModel : ViewModelBase
     {
         bool duplicateMessage;
 
         public bool DuplicateMessage
         {
             get { return duplicateMessage; }
-            set { duplicateMessage = value; }
+            set { duplicateMessage = value;
+            OnPropertyChanged("DuplicateMessage");
+            }
         }
         bool loseMessage;
 
         public bool LoseMessage
         {
             get { return loseMessage; }
-            set { loseMessage = value; }
+            set { loseMessage = value;
+            OnPropertyChanged("LoseMessage");
+            }
         }
         bool corruptMessage;
 
         public bool CorruptMessage
         {
             get { return corruptMessage; }
-            set { corruptMessage = value; }
+            set { corruptMessage = value;
+            OnPropertyChanged("CorruptMessage");
+            }
         }
         bool delayMessage;
 
         public bool DelayMessage
         {
             get { return delayMessage; }
-            set { delayMessage = value; }
+            set { delayMessage = value;
+            OnPropertyChanged("DelayMessage");
+            }
         }
         bool reverseOrderMessage;
 
         public bool ReverseOrderMessage
         {
             get { return reverseOrderMessage; }
-            set { reverseOrderMessage = value; }
+            set { reverseOrderMessage = value;
+            OnPropertyChanged("ReverseOrderMessage");
+            }
         }
         string previousMessage = null;
 
         public string PreviousMessage
         {
             get { return previousMessage; }
-            set { previousMessage = value; }
+            set { previousMessage = value;
+            OnPropertyChanged("PreviousMessage");
+            }
         }
         int delay_ms = 0;
 
         public int Delay_ms
         {
             get { return delay_ms; }
-            set { delay_ms = value; }
+            set { delay_ms = value;
+            OnPropertyChanged("Delay_ms");
+            }
         }
         bool disable_process;
 
         public bool Disable_process
         {
             get { return disable_process; }
-            set { disable_process = value; }
+            set { disable_process = value;
+            OnPropertyChanged("Disable_process");
+            }
         }
 
         private string OutOfOrderMessage(string msg)

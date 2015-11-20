@@ -16,12 +16,22 @@ namespace DistributedTestEnvironmentUI.Models
     public class DistributedProcessModel : ViewModelBase
     {
         string hostName;
+
+        public string HostName
+        {
+            get { return hostName; }
+            set { hostName = value;
+            OnPropertyChanged("HostName");
+            }
+        }
         int port;
 
         public int Port
         {
             get { return port; }
-            set { port = value; }
+            set { port = value;
+            OnPropertyChanged("Port");
+            }
         }
 
         int frameworkPort;
@@ -29,7 +39,19 @@ namespace DistributedTestEnvironmentUI.Models
         public int FrameworkPort
         {
             get { return frameworkPort; }
-            set { frameworkPort = value; }
+            set { frameworkPort = value;
+            OnPropertyChanged("FrameworkPort");
+            }
+        }
+        string frameworkHost;
+        public string FrameworkHost
+        {
+            get { return frameworkHost; }
+            set
+            {
+                frameworkHost = value;
+                OnPropertyChanged("FrameworkHost");
+            }
         }
 
         RouteModel routing;
@@ -37,7 +59,9 @@ namespace DistributedTestEnvironmentUI.Models
         public RouteModel Routing
         {
             get { return routing; }
-            set { routing = value; }
+            set { routing = value;
+            OnPropertyChanged("Routing");
+            }
         }
 
         Process proc;
@@ -45,7 +69,10 @@ namespace DistributedTestEnvironmentUI.Models
         public Process Proc
         {
             get { return proc; }
-            set { proc = value; }
+            set { proc = value;
+            OnPropertyChanged("Proc");
+            }
+
         }
         string processName;
 
@@ -61,7 +88,9 @@ namespace DistributedTestEnvironmentUI.Models
         public string ProcessPath
         {
             get { return processPath; }
-            set { processPath = value; }
+            set { processPath = value;
+            OnPropertyChanged("ProcessPath");
+            }
         }
         private List<string> arguments = new List<string>();
         ProcessState procState = new ProcessState();

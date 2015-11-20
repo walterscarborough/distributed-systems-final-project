@@ -41,17 +41,17 @@
         </StackPanel>
 
         <Grid Margin="0,0,0,5">
-            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Path=ProcHostName}" Margin="130,20,261,341"/>
+            <TextBox Height="23" TextWrapping="Wrap" IsReadOnly="True" Text="{Binding Path=CurrentProcess.FrameworkHost}" Margin="130,20,261,341"/>
             <TextBlock HorizontalAlignment="Left" Margin="39,27,0,0" TextWrapping="Wrap" Text="Host Name" VerticalAlignment="Top" Width="134"/>
             <Border BorderBrush="Black" BorderThickness="1" Margin="10,114,31,108"/>
-            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Path=ProcName}" Margin="130,55,261,306"/>
-            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Path=ProcPort}" Margin="130,84,261,277"/>
-            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Path=ProcDelayTime}" Margin="195,121,266,240"/>
-            <CheckBox Content="Delay" Margin="125,125,342,237" IsThreeState="False" IsChecked="{Binding Path=ProcDelay, Mode=TwoWay}"/>
-            <CheckBox Content="Duplicate" Width="100" Margin="25,152,412,210" IsThreeState="False" IsChecked="{Binding Path=ProcDuplicate, Mode=TwoWay}" />
-            <CheckBox Content="Corrupt" Margin="315,122,152,240" IsThreeState="False" IsChecked="{Binding Path=ProcCorrupt, Mode=TwoWay}" />
-            <CheckBox Content="Lose" Width="100" Margin="25,125,412,237" IsThreeState="False" IsChecked="{Binding Path=ProcLose, Mode=TwoWay}"/>
-            <CheckBox Content="Out of Order" Width="100" Margin="126,154,311,202" IsThreeState="False" IsChecked="{Binding Path=ProcOutofOrder, Mode=TwoWay}"/>
+            <TextBox IsReadOnly="True"  Height="23" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.ProcessName}" Margin="130,55,261,306"/>
+            <TextBox IsReadOnly="True" Height="23" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.FrameworkPort}" Margin="130,84,261,277"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.Routing.Faults.Delay_ms}" Margin="195,121,266,240"/>
+            <CheckBox Content="Delay" Margin="125,125,342,237" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.DelayMessage, Mode=TwoWay}"/>
+            <CheckBox Content="Duplicate" Width="100" Margin="25,152,412,210" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.DuplicateMessage, Mode=TwoWay}" />
+            <CheckBox Content="Corrupt" Margin="315,122,152,240" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.CorruptMessage, Mode=TwoWay}" />
+            <CheckBox Content="Lose" Width="100" Margin="25,125,412,237" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.LoseMessage, Mode=TwoWay}"/>
+            <CheckBox Content="Out of Order" Width="100" Margin="126,154,311,202" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.ReverseOrderMessage, Mode=TwoWay}"/>
             <TextBlock HorizontalAlignment="Left" Margin="39,55,0,0" TextWrapping="Wrap" Text="Process Name" VerticalAlignment="Top" Width="134"/>
             <TextBlock HorizontalAlignment="Left" Margin="38,87,0,0" TextWrapping="Wrap" Text="Port Number" VerticalAlignment="Top" Width="134"/>
             <Button Content="Start" Width="70" Margin="315,20,152,340" Command="{Binding StartProcessCmd}"/>

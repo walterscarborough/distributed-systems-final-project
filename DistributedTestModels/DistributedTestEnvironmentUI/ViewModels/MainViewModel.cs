@@ -63,7 +63,7 @@ namespace DistributedTestEnvironmentUI.ViewModels
             ProcessPort = new NotifierProperty<int>(8000);
             ProcessArguments = new NotifierProperty<string>("8001 Walter");
             ProcessPath = new NotifierProperty<string>("");
-            ProcPort = 8000;
+          
             addNode("Node1");
             string[] processArgs = { "8001", "Walter" };
             this.addProcess("ClientTest.exe", "Node1", 8000, "",processArgs );
@@ -181,53 +181,13 @@ namespace DistributedTestEnvironmentUI.ViewModels
         }
         private void RemoveProcess()
         {
-            System.Windows.Application.Current.Shutdown();
+            DistributedProcessModel tmpProc = CurrentProcess;
+            findNode(CurrentProcess.FrameworkHost).removeProcess(CurrentProcess);
+            
+
         }
 
-        public ICommand UpdateProcessCmd
-        {
-            get
-            {
-                if (dg_updateProcess == null)
-                {
-                    dg_updateProcess = new DelegateCommand(UpdateProcess);
-                }
-                return dg_updateProcess;
-            }
-        }
-        private void UpdateProcess()
-        {
-            DistributedProcessModel proc = this.getProcess(ProcHostName, ProcName, ProcPort);
-            if(ProcDelay)
-            {
-                this.enableDelay(proc);
-                this.setDelay(proc, ProcDelayTime);
-            }
-            else
-            {
-                this.disableDelay(proc);
-            }
-            if (ProcCorrupt)
-                this.corruptMessage(proc);
-            else
-                this.stopCorrupt(proc);
-            if (ProcDuplicate)
-                this.duplicateMessage(proc);
-            else
-                this.stopDuplicate(proc);
-            if (ProcOutofOrder)
-            {
-                this.outofOrder(proc);
-            }
-            else
-                this.disableoutofOrder(proc);
-            if (ProcLose)
-            {
-                this.loseMessage(proc);
-            }
-            else
-                this.disableLose(proc);
-        }
+  
 
         public ICommand StartProcessCmd
         {
@@ -242,7 +202,8 @@ namespace DistributedTestEnvironmentUI.ViewModels
         }
         private void StartProcess()
         {
-            this.startProcess(ProcHostName, ProcPort, ProcName);
+            //this.startProcess(CurrentProcess.FrameworkHost, CurrentProcess.FrameworkPort, CurrentProcess.ProcessName);
+            CurrentProcess.startProcess();
         }
 
         public ICommand StopProcessCmd
@@ -258,7 +219,8 @@ namespace DistributedTestEnvironmentUI.ViewModels
         }
         private void StopProcess()
         {
-            this.startProcess(ProcHostName, ProcPort, ProcName);
+            //this.startProcess(ProcHostName, ProcPort, ProcName);
+            CurrentProcess.stopProcess();
         }
 #endregion
 
@@ -316,110 +278,11 @@ namespace DistributedTestEnvironmentUI.ViewModels
         }
         #endregion
 
-        #region Process
-        private bool procLose;
-        public bool ProcLose
-        {
-            get { return procLose; }
-            set
-            {
-                procLose = value;
-                OnPropertyChanged("ProcLose");
-            }
-        }
-        private bool procCorrupt;
-        public bool ProcCorrupt
-        {
-            get { return procCorrupt; }
-            set
-            {
-                procCorrupt = value;
-                OnPropertyChanged("ProcCorrupt");
-            }
-        }
-        private bool procDelay;
-        public bool ProcDelay
-        {
-            get { return procDelay; }
-            set
-            {
-                procDelay = value;
-                OnPropertyChanged("ProcDelay");
-            }
-        }
-        private bool procOutofOrder;
-        public bool ProcOutofOrder
-        {
-            get { return procOutofOrder; }
-            set
-            {
-                procOutofOrder = value;
-                OnPropertyChanged("ProcOutofOrder");
-            }
-        }
-        private bool procDuplicate;
-        public bool ProcDuplicate
-        {
-            get { return procDuplicate; }
-            set
-            {
-                procDuplicate = value;
-                OnPropertyChanged("ProcDuplicate");
-            }
-        }
-        private int procDelayTime;
-        public int ProcDelayTime
-        {
-            get { return procDelayTime; }
-            set
-            {
-                procDelayTime = value;
-                OnPropertyChanged("ProcDelayTime");
-            }
-        }
-        private int procPort;
-        public int ProcPort
-        {
-            get { return procPort; }
-            set
-            {
-                procPort = value;
-                OnPropertyChanged("ProcPort");
-            }
-        }
-        private string procName;
-        public string ProcName
-        {
-            get { return procName; }
-            set
-            {
-                procName = value;
-                OnPropertyChanged("ProcName");
-            }
-        }
 
-
-
-        private string procHostName;
-        public string ProcHostName
-        {
-            get { return procHostName; }
-            set
-            {
-                procHostName = value;
-                OnPropertyChanged("ProcHostName");
-            }
-        }
-
-
-       
-
-
-        #endregion
 
         #region TestEnvironment
 
-               AsyncObservableCollection<ComputerNodeModel> processNodes = new AsyncObservableCollection<ComputerNodeModel>();
+        AsyncObservableCollection<ComputerNodeModel> processNodes = new AsyncObservableCollection<ComputerNodeModel>();
 
         public AsyncObservableCollection<ComputerNodeModel> ProcessNodes
         {
@@ -489,8 +352,11 @@ namespace DistributedTestEnvironmentUI.ViewModels
             if (tmpNode == null)
                 return;
             tmpNode.addProcess(ProcName, tmpNode.FrameworkNodeName, Path, Port + 10000, true);
-            foreach(string arg in arguments)
-              tmpNode.getProcess(ProcName, Port + 10000).addArgurment(arg);
+            DistributedProcessModel tmpProcess = tmpNode.getProcess(ProcName, Port + 10000);
+            foreach (string arg in arguments)
+                tmpProcess.addArgurment(arg);
+            tmpProcess.FrameworkHost = tmpNode.NodeName;
+            tmpProcess.FrameworkPort = Port;
             
           
         }
@@ -524,66 +390,66 @@ namespace DistributedTestEnvironmentUI.ViewModels
         
         public void setDelay(DistributedProcessModel proc, int delay) 
         {
-            proc.Routing.faults.Delay_ms = delay;
+            proc.Routing.Faults.Delay_ms = delay;
         }
 
         public void enableDelay(DistributedProcessModel proc)
         {
-            proc.Routing.faults.DelayMessage = true;
+            proc.Routing.Faults.DelayMessage = true;
         }
 
         public void disableDelay(DistributedProcessModel proc)
         {
-            proc.Routing.faults.DelayMessage = false;
+            proc.Routing.Faults.DelayMessage = false;
         }
 
         public void disableProcess(DistributedProcessModel proc) 
         {
-            proc.Routing.faults.Disable_process = true;
+            proc.Routing.Faults.Disable_process = true;
         }
         public void enableProcess(DistributedProcessModel proc) 
         {
-            proc.Routing.faults.Disable_process = false;
+            proc.Routing.Faults.Disable_process = false;
         }
 
         public void duplicateMessage(DistributedProcessModel proc) 
         {
-            proc.Routing.faults.DelayMessage = true;
+            proc.Routing.Faults.DelayMessage = true;
         }
 
         public void stopDuplicate(DistributedProcessModel proc) 
         {
-            proc.Routing.faults.DelayMessage = false;
+            proc.Routing.Faults.DelayMessage = false;
         }
 
         public void corruptMessage(DistributedProcessModel proc)
         {
-            proc.Routing.faults.CorruptMessage = true;
+            proc.Routing.Faults.CorruptMessage = true;
         }
 
         public void stopCorrupt(DistributedProcessModel proc)
         {
-            proc.Routing.faults.CorruptMessage = false;
+            proc.Routing.Faults.CorruptMessage = false;
         }
 
         public void loseMessage(DistributedProcessModel proc)
         {
-            proc.Routing.faults.LoseMessage = true;
+            proc.Routing.Faults.LoseMessage = true;
         }
 
         public void disableLose(DistributedProcessModel proc)
         {
-            proc.Routing.faults.LoseMessage = false;
+            proc.Routing.Faults.LoseMessage = false;
         }
 
         public void outofOrder(DistributedProcessModel proc)
         {
-            proc.Routing.faults.ReverseOrderMessage = true;
+            proc.Routing.Faults.ReverseOrderMessage = true;
         }
 
         public void disableoutofOrder(DistributedProcessModel proc)
         {
-            proc.Routing.faults.ReverseOrderMessage = false;
+            proc.Routing.Faults.ReverseOrderMessage = false;
         }
     }
 

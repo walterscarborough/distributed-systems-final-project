@@ -35,7 +35,16 @@ namespace DistributedTestEnvironmentUI.Models
         private int physicalPort;
        
         TcpIPServerModel sm;
-        public FaultInjectionModel faults = new FaultInjectionModel();
+        private FaultInjectionModel faults = new FaultInjectionModel();
+        public FaultInjectionModel Faults
+        {
+            get { return faults; }
+            set
+            {
+                faults = value;
+                OnPropertyChanged("Faults");
+            }
+        }
      
         
 
@@ -76,7 +85,7 @@ namespace DistributedTestEnvironmentUI.Models
 
         public string applyFaults(string data) 
         {
-            string tmp = faults.applyFaults(data);
+            string tmp = Faults.applyFaults(data);
             return tmp;
         }
 
@@ -90,27 +99,27 @@ namespace DistributedTestEnvironmentUI.Models
                 cm.OpenCommPort(physicalHost, physicalPort);
                 cm.SendMsg(msg);
                 cm.close();
-                if (faults.DuplicateMessage)
+                if (Faults.DuplicateMessage)
                 {
                     cm = new TcpIPClientModel();
                     cm.OpenCommPort(physicalHost, physicalPort);
                     cm.SendMsg(msg);
                     cm.close();
                 }
-                if(faults.ReverseOrderMessage)
+                if(Faults.ReverseOrderMessage)
                 {
                     cm = new TcpIPClientModel();
                     cm.OpenCommPort(physicalHost, physicalPort);
-                    cm.SendMsg(faults.PreviousMessage);
+                    cm.SendMsg(Faults.PreviousMessage);
                     cm.close();
-                    if (faults.DuplicateMessage)
+                    if (Faults.DuplicateMessage)
                     {
                         cm = new TcpIPClientModel();
                         cm.OpenCommPort(physicalHost, physicalPort);
-                        cm.SendMsg(faults.PreviousMessage);
+                        cm.SendMsg(Faults.PreviousMessage);
                         cm.close();
                     }
-                    faults.PreviousMessage = null;
+                    Faults.PreviousMessage = null;
                 }
                
             }

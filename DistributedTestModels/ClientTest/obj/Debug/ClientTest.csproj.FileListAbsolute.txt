@@ -9,3 +9,8 @@ C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\b
 C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\obj\Debug\ClientTest.csprojResolveAssemblyReference.cache
 C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\obj\Debug\ClientTest.exe
 C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\obj\Debug\ClientTest.pdb
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\UnitTests\bin\Debug\ClientTest.exe
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\UnitTests\bin\Debug\ClientTest.exe.config
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\UnitTests\bin\Debug\ClientTest.pdb
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\ClientTest\obj\Debug\ClientTest.exe
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\ClientTest\obj\Debug\ClientTest.pdb
