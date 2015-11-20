@@ -107,6 +107,11 @@ namespace DistributedTestEnvironmentUI.Models
             processName = process;
             processPath = path;
             port = portNum;
+            if(processName == "node")
+            {
+                arguments.Add("--harmony");
+                arguments.Add("app.js");
+            }
             arguments.Add(host);
             arguments.Add(port.ToString());
             procState = ProcessState.Stopped;

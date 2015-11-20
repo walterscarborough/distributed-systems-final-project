@@ -37,3 +37,4 @@ C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestM
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.csproj.GenerateResource.Cache
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.exe
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.pdb
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.csprojResolveAssemblyReference.cache

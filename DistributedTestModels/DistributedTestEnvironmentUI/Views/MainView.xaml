@@ -43,7 +43,7 @@
         <Grid Margin="0,0,0,5">
             <TextBox Height="23" TextWrapping="Wrap" IsReadOnly="True" Text="{Binding Path=CurrentProcess.FrameworkHost}" Margin="130,20,261,341"/>
             <TextBlock HorizontalAlignment="Left" Margin="39,27,0,0" TextWrapping="Wrap" Text="Host Name" VerticalAlignment="Top" Width="134"/>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="10,114,31,108"/>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="10,114,31,202"/>
             <TextBox IsReadOnly="True"  Height="23" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.ProcessName}" Margin="130,55,261,306"/>
             <TextBox IsReadOnly="True" Height="23" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.FrameworkPort}" Margin="130,84,261,277"/>
             <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.Routing.Faults.Delay_ms}" Margin="195,121,266,240"/>
@@ -55,7 +55,6 @@
             <TextBlock HorizontalAlignment="Left" Margin="39,55,0,0" TextWrapping="Wrap" Text="Process Name" VerticalAlignment="Top" Width="134"/>
             <TextBlock HorizontalAlignment="Left" Margin="38,87,0,0" TextWrapping="Wrap" Text="Port Number" VerticalAlignment="Top" Width="134"/>
             <Button Content="Start" Width="70" Margin="315,20,152,340" Command="{Binding StartProcessCmd}"/>
-            <Button Content="Update" Width="70" Margin="201,204,266,158" Command="{Binding UpdateProcessCmd}"/>
             <Button Content="Stop" Width="70" Margin="315,67,152,293" Command="{Binding StopProcessCmd}"/>
 
         </Grid>

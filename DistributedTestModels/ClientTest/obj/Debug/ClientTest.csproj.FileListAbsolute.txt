@@ -14,3 +14,4 @@ C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestM
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\UnitTests\bin\Debug\ClientTest.pdb
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\ClientTest\obj\Debug\ClientTest.exe
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\ClientTest\obj\Debug\ClientTest.pdb
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\ClientTest\obj\Debug\ClientTest.csprojResolveAssemblyReference.cache
