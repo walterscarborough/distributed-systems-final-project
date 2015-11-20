@@ -1,0 +1,12 @@
+﻿<Window x:Class="DistributedTestEnvironmentUI.Views.AddNode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:DistributedTestEnvironmentUI.Views"
+        Title="AddNode" Height="164" Width="300">
+    <Grid>
+        <Button Command="{Binding Path=AddANodeCmd}" Content="Add" HorizontalAlignment="Left" Margin="106,90,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="106,51,0,0" TextWrapping="Wrap" Text="{Binding Path=NodeName.PropVal}" VerticalAlignment="Top" Width="120" />
+        <TextBlock Text="Host Name" HorizontalAlignment="Left" Margin="30,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

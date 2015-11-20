@@ -1,0 +1,11 @@
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\bin\Debug\ClientTest.exe.config
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\bin\Debug\ClientTest.exe
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\bin\Debug\ClientTest.pdb
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\bin\Debug\DistributedTestModels.dll
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\bin\Debug\DistributedTestModels.pdb
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\bin\Debug\ClientTest.exe.config
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\bin\Debug\ClientTest.exe
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\bin\Debug\ClientTest.pdb
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\obj\Debug\ClientTest.csprojResolveAssemblyReference.cache
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\obj\Debug\ClientTest.exe
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\ClientTest\obj\Debug\ClientTest.pdb

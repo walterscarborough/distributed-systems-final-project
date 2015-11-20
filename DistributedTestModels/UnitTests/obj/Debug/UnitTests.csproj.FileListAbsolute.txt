@@ -1,0 +1,8 @@
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\bin\Debug\UnitTests.exe.config
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\bin\Debug\UnitTests.exe
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\obj\Debug\UnitTests.exe
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\bin\Debug\DistributedTestEnvironmentUI.exe
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\UnitTests\bin\Debug\DistributedTestEnvironmentUI.pdb

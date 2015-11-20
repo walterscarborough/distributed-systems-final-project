@@ -1,0 +1,20 @@
+﻿DistributedTestEnvironmentUI
+
+
+winexe
+C#
+.cs
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\
+DistributedTestEnvironmentUI
+none
+false
+DEBUG;TRACE
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\App.xaml
+3982539936
+
+23-1438934259
+231209426452
+Views\AddNode.xaml;Views\AddProcess.xaml;Views\MainView.xaml;
+
+False
+

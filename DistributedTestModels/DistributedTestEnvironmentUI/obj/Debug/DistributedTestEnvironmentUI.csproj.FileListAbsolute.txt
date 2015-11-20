@@ -1,0 +1,21 @@
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\AddNode.g.cs
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\AddProcess.g.cs
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\MainView.g.cs
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\App.g.cs
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI_MarkupCompile.cache
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI_MarkupCompile.lref
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\AddNode.baml
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\AddProcess.baml
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.exe
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.pdb
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.exe.config
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.exe
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.pdb
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\MainView.baml
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.g.resources
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.Properties.Resources.resources
+C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.csproj.GenerateResource.Cache
+C:\Users\Jon\Documents\GitHub\distributed-systems\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.exe.config
+C:\Users\Jon\Documents\GitHub\distributed-systems\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.exe
+C:\Users\Jon\Documents\GitHub\distributed-systems\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.pdb
