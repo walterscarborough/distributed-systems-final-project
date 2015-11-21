@@ -3,9 +3,10 @@
 
 // libs
 var colors = require('colors/safe');
+var jsonApprover = require('json-approver');
 var net = require('net');
 var util = require('util');
-var uuid = require('uuid');
+//var uuid = require('uuid');
 
 // app vars
 var myIp = '';
@@ -37,19 +38,19 @@ leftNeighborPort = parseInt(process.argv[6]);
 
 // server
 var server = net.createServer(function(socket) {
-    //socket.write('Echo server\r\n');
-    //socket.pipe(socket);
 
     socket.on('data', function(data) {
         data = data.toString().trim();
 
         if (sentMessages.has(data) === false) {
 
-            var parsedData = JSON.parse(data);
+            if (jsonApprover.isJSON(data)) {
+                var parsedData = JSON.parse(data);
 
-            console.log(colors.green(parsedData.name + ' says: ' + parsedData.message));
+                console.log(colors.green(parsedData.name + ' says: ' + parsedData.message));
 
-            sendMessage(parsedData.message, parsedData.name, leftNeighborIp, leftNeighborPort);
+                sendMessage(parsedData.message, parsedData.name, leftNeighborIp, leftNeighborPort);
+            }
         }
     });
 });
@@ -66,31 +67,15 @@ process.stdin.on('data', function (text) {
 
         text = text.replace('\n', '');
 
-        var textSplit = text.split(" ");
+        var textSplit = text.split(' ');
 
         if (textSplit.length > 0) {
 
-            /*
-            if (textSplit[0] === 'addServer') {
-                console.log("addServer hit");
-            }
-            else if (textSplit[0] === 'sendMessage') {
+            var outText = textSplit.join(' ');
 
-                textSplit.shift();
+            console.log(colors.magenta('You say: ' + outText));
 
-                var outText = textSplit.join(" ");
-
-                console.log(colors.magenta('You say: ' + outText));
-
-                sendMessage(outText, myName, leftNeighborIp, leftNeighborPort);
-            }
-            */
-
-                var outText = textSplit.join(" ");
-
-                console.log(colors.magenta('You say: ' + outText));
-
-                sendMessage(outText, myName, leftNeighborIp, leftNeighborPort);
+            sendMessage(outText, myName, leftNeighborIp, leftNeighborPort);
         }
     }
 });
@@ -111,11 +96,12 @@ var sendMessage = function(text, name, ip, port) {
         sentMessages.add(JSON.stringify(outgoingMessage));
 
         client.write(JSON.stringify(outgoingMessage));
+        client.end();
     });
 
     client.on('data', function(data) {
         //console.log('client received: ' + data);
-        client.destroy(); // kill client after server's response
+        client.destroy(); 
     });
 
     client.on('close', function() {
