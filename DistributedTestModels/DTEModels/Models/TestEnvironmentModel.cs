@@ -5,16 +5,15 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DistributedTestEnvironmentUI.MVVM_Tools;
+using DTEModels.MVVM_Tools;
 
-namespace DistributedTestEnvironmentUI.Models
+namespace DTEModels.Models
 {
     public class TestEnvironmentModel : ViewModelBase
     {
+        AsyncObservableCollection<ComputerNodeModel> processNodes = new AsyncObservableCollection<ComputerNodeModel>();
 
-        ObservableCollection<ComputerNodeModel> processNodes = new ObservableCollection<ComputerNodeModel>();
-
-        public ObservableCollection<ComputerNodeModel> ProcessNodes
+        public AsyncObservableCollection<ComputerNodeModel> ProcessNodes
         {
             get { return processNodes; }
             set { processNodes = value;
@@ -33,7 +32,7 @@ namespace DistributedTestEnvironmentUI.Models
             }
         }
 
-        private ComputerNodeModel findNode(string HostName)
+        public ComputerNodeModel findNode(string HostName)
         {
             var compNodes = from compNode in processNodes where compNode.NodeName == HostName select compNode;
             if (compNodes.Count() > 0)
@@ -83,10 +82,11 @@ namespace DistributedTestEnvironmentUI.Models
                 return;
             tmpNode.addProcess(ProcName, tmpNode.FrameworkNodeName, Path, Port + 10000, true);
             DistributedProcessModel tmpProcess = tmpNode.getProcess(ProcName, Port + 10000);
-            foreach(string arg in arguments)
+            foreach (string arg in arguments)
                 tmpProcess.addArgurment(arg);
             tmpProcess.FrameworkHost = tmpNode.NodeName;
             tmpProcess.FrameworkPort = Port;
+            
           
         }
         public void removeProcess(string ProcName, string HostName, int Port)
@@ -97,6 +97,7 @@ namespace DistributedTestEnvironmentUI.Models
             tmpNode.removeProcess(tmpNode.getProcess(ProcName, Port + 10000));
             
         }
+
         public void startProcess(string HostName, int port, string ProcessName) 
         { 
             ComputerNodeModel tmpNode = findNode(HostName);
@@ -180,5 +181,13 @@ namespace DistributedTestEnvironmentUI.Models
         {
             proc.Routing.Faults.ReverseOrderMessage = false;
         }
+   
+        public void sendMesage(DistributedProcessModel proc, string msg)
+        {
+            proc.Routing.sendMessage(msg);
+        }
+    
     }
+
+    
 }

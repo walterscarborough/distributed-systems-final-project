@@ -8,7 +8,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Net;
 
-namespace DistributedTestEnvironmentUI.Models
+namespace ClientTest.Models
 {
     public class MessageEventArgs : EventArgs
     {
@@ -95,7 +95,7 @@ namespace DistributedTestEnvironmentUI.Models
             allDone.Reset();
             try
             {
-                LogModel.LogMessage("Opening server port on " + IpAddress + " port: " + Port.ToString(), ELogflag.LOG, "Socket Open");
+               // LogModel.LogMessage("Opening server port on " + IpAddress + " port: " + Port.ToString(), ELogflag.LOG, "Socket Open");
                 listener = TcpListener.Create(Port);
                 listener.Start();
                 connectThread.Start();
@@ -103,8 +103,8 @@ namespace DistributedTestEnvironmentUI.Models
             }
             catch (Exception ex)
             {
-                LogModel.LogMessage("Error trying to open socket " + IpAddress + " port: " + Port.ToString(), ELogflag.CRITICAL, "Socket Open Error");
-                LogModel.LogMessage("Error trace: " + ex.Message, ELogflag.CRITICAL, "Error trace");
+            //    LogModel.LogMessage("Error trying to open socket " + IpAddress + " port: " + Port.ToString(), ELogflag.CRITICAL, "Socket Open Error");
+              //  LogModel.LogMessage("Error trace: " + ex.Message, ELogflag.CRITICAL, "Error trace");
 
             }
         }
@@ -140,7 +140,7 @@ namespace DistributedTestEnvironmentUI.Models
 
         public void msgRecieved(string msg)
         {
-            LogModel.LogMessage("Message received: " + msg, ELogflag.LOG, "msgReceived");
+           // LogModel.LogMessage("Message received: " + msg, ELogflag.LOG, "msgReceived");
             EventForwarder.Forward<MessageEventArgs>(this, onMessageRecieved, new MessageEventArgs(msg));
             socket.Shutdown(SocketShutdown.Both);
             socket.Close();
@@ -158,8 +158,8 @@ namespace DistributedTestEnvironmentUI.Models
             }
             catch (Exception ex)
             {
-                LogModel.LogMessage("Error writing message on socket " + IpAddress + " port: " + Port.ToString(), ELogflag.CRITICAL, "Socket Open Error");
-                LogModel.LogMessage("Error trace: " + ex.Message, ELogflag.CRITICAL, "Error trace");
+               // LogModel.LogMessage("Error writing message on socket " + IpAddress + " port: " + Port.ToString(), ELogflag.CRITICAL, "Socket Open Error");
+               // LogModel.LogMessage("Error trace: " + ex.Message, ELogflag.CRITICAL, "Error trace");
             }
         }
     }

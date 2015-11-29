@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using DistributedTestEnvironmentUI.MVVM_Tools;
+using DTEModels.MVVM_Tools;
 
-namespace DistributedTestEnvironmentUI.Models
+namespace DTEModels.Models
 {
     public class FaultInjectionModel : ViewModelBase
     {

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.ComponentModel;
-using DistributedTestEnvironmentUI.MVVM_Tools;
+using DTEModels.MVVM_Tools;
 
-namespace DistributedTestEnvironmentUI.Models
+namespace DTEModels.Models
 {
     enum ProcessState{
         Stopped,

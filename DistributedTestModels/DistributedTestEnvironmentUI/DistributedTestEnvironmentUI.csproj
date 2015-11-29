@@ -36,10 +36,6 @@
   <ItemGroup>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="ReachFramework" />
-    <Reference Include="Syncfusion.Grid.WPF, Version=13.3450.0.7, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.GridCommon.Wpf, Version=13.3450.0.7, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Linq.Base, Version=13.3450.0.7, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Shared.Wpf, Version=13.3450.0.7, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -64,20 +60,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\AsyncObservableCollection.cs" />
-    <Compile Include="Models\ComputerNodeModel.cs" />
-    <Compile Include="Models\DistributedProcessModel.cs" />
-    <Compile Include="Models\EventForwarder.cs" />
-    <Compile Include="Models\FaultInjectionModel.cs" />
-    <Compile Include="Models\LogModel.cs" />
-    <Compile Include="Models\RouteModel.cs" />
-    <Compile Include="Models\TcpIPClientModel.cs" />
-    <Compile Include="Models\TcpIPServerModel.cs" />
-    <Compile Include="Models\TestEnvironmentModel.cs" />
-    <Compile Include="MVVM Tools\CommandReference.cs" />
-    <Compile Include="MVVM Tools\DelegateCommand.cs" />
-    <Compile Include="MVVM Tools\NotifierProperty.cs" />
-    <Compile Include="MVVM Tools\ViewModelBase.cs" />
     <Compile Include="ViewModels\LogCollection.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\AddNode.xaml.cs">
@@ -132,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTEModels\DTEModels.csproj">
+      <Project>{471b4e52-ac50-4a8b-88c3-50e683d24e95}</Project>
+      <Name>DTEModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

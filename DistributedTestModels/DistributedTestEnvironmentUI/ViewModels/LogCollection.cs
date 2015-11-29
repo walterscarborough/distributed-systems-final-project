@@ -8,6 +8,31 @@ namespace DistributedTestEnvironmentUI.ViewModels
 {
     public class LogCollection
     {
+
+        private string type;
+
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        private string timeStamp;
+
+        public string TimeStamp
+        {
+            get { return timeStamp; }
+            set { timeStamp = value; }
+        }
+
+        private string title;
+
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+
         private string node;
 
         public string Node
@@ -17,13 +42,7 @@ namespace DistributedTestEnvironmentUI.ViewModels
         }
         
         
-        private string type;
 
-        public string Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
 
         private string message;
 

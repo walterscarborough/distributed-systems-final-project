@@ -4,7 +4,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Runtime.Serialization;
 
-namespace DistributedTestEnvironmentUI.MVVM_Tools
+namespace DTEModels.MVVM_Tools
 {
 
     public class NotifierProperty<TPropType> : NotifierBase

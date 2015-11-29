@@ -2,3 +2,8 @@ C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\Distributed
 C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestModels\bin\Debug\DistributedTestModels.pdb
 C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestModels\obj\Debug\DistributedTestModels.dll
 C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\DistributedTestModels\obj\Debug\DistributedTestModels.pdb
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestModels\bin\Debug\DistributedTestModels.dll
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestModels\bin\Debug\DistributedTestModels.pdb
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestModels\obj\Debug\DistributedTestModels.dll
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestModels\obj\Debug\DistributedTestModels.pdb
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestModels\obj\Debug\DistributedTestModels.csprojResolveAssemblyReference.cache

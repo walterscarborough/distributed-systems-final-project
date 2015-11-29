@@ -7,7 +7,7 @@ using System.Threading;
 using System.IO;
 using System.Net.Sockets;
 using System.Net;
-namespace DistributedTestEnvironmentUI.Models
+namespace DTEModels.Models
 {
     public class TcpIPClientModel
     {
@@ -53,8 +53,8 @@ namespace DistributedTestEnvironmentUI.Models
             }
             catch (Exception ex)
             {
-                LogModel.LogMessage("Error writing message on socket " + IpAddress + " port: " + Port.ToString(), ELogflag.CRITICAL, "Socket Open Error");
-                LogModel.LogMessage("Error trace: " + ex.Message, ELogflag.CRITICAL, "Error trace");
+                LogModel.LogMessage("Error writing message on socket " + IpAddress + " port: " + Port.ToString(), this.IpAddress + ":" + Port.ToString(), ELogflag.ERROR, "Socket Open Error");
+                LogModel.LogMessage("Error trace: " + ex.Message,this.IpAddress + ":" + Port.ToString(), ELogflag.ERROR, "Error trace");
             }
         }
         
@@ -62,7 +62,7 @@ namespace DistributedTestEnvironmentUI.Models
         {
             IpAddress = IP;
             Port = PortNumber;
-            LogModel.LogMessage("Opening client port on " + IpAddress + " port: " + Port.ToString(), ELogflag.LOG, "Socket Open");
+            LogModel.LogMessage("Opening client port on " + IpAddress + " port: " + Port.ToString(), this.IpAddress + ":" + Port.ToString(), ELogflag.LOG, "Socket Open");
             allDone.Reset();
             try
             {
@@ -79,8 +79,8 @@ namespace DistributedTestEnvironmentUI.Models
             }
             catch (Exception ex)
             {
-                LogModel.LogMessage("Error trying to open socket " + IpAddress + " port: " + Port.ToString(), ELogflag.CRITICAL, "Socket Open Error");
-                LogModel.LogMessage("Error trace: " + ex.Message, ELogflag.CRITICAL, "Error trace");
+                LogModel.LogMessage("Error trying to open socket " + IpAddress + " port: " + Port.ToString(), this.IpAddress + ":" + Port.ToString(),  ELogflag.ERROR, "Socket Open Error");
+                LogModel.LogMessage("Error trace: " + ex.Message, this.IpAddress + ":" + Port.ToString(), ELogflag.ERROR, "Error trace");
 
             }
         }

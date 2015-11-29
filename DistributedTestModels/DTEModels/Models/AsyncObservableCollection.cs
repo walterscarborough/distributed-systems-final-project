@@ -4,7 +4,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Threading;
 
-namespace DistributedTestEnvironmentUI.Models
+namespace DTEModels.Models
 {
     public class AsyncObservableCollection<T> : ObservableCollection<T>
     {

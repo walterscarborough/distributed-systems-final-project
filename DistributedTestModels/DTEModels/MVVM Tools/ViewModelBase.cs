@@ -18,7 +18,7 @@ using System.Xml.Linq;
 
 
 
-namespace DistributedTestEnvironmentUI.MVVM_Tools
+namespace DTEModels.MVVM_Tools
 {
 
 

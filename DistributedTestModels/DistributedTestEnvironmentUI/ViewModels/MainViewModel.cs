@@ -5,26 +5,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using DistributedTestEnvironmentUI.MVVM_Tools;
-using DistributedTestEnvironmentUI.Models;
+using DTEModels.MVVM_Tools;
+using DTEModels.Models;
+using System.Threading;
 
 namespace DistributedTestEnvironmentUI.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
 
-       /* TestEnvironmentModel testEnvironment = new TestEnvironmentModel();
+        TestEnvironmentModel testEnvironment = new TestEnvironmentModel();
 
         public TestEnvironmentModel TestEnvironment
         {
             get { return testEnvironment; }
-            set { 
+            set
+            {
                 testEnvironment = value;
                 OnPropertyChanged("TestEnvironment");
             }
-        }*/
+        }
 
-        public AsyncObservableCollection<LogCollection> LogDataGrid { get; set; }
+        private AsyncObservableCollection<LogCollection> logDataGrid = new AsyncObservableCollection<LogCollection>();
+        public AsyncObservableCollection<LogCollection> LogDataGrid {
+            get { return logDataGrid; }
+            set
+            {
+                logDataGrid = value;
+                OnPropertyChanged("LogDataGrid");
+            }
+        }
         private DistributedProcessModel currentProcess;
 
         public DistributedProcessModel CurrentProcess
@@ -33,41 +43,46 @@ namespace DistributedTestEnvironmentUI.ViewModels
             set
             {
                 currentProcess = value;
-            OnPropertyChanged("CurrentProcess");
+                OnPropertyChanged("CurrentProcess");
             }
         }
-        
+
         DistributedTestEnvironmentUI.Views.AddNode addNodeView;
         DistributedTestEnvironmentUI.Views.AddProcess addProcessView;
 
         public void OnLogReceived(object sender, LogEventArgs e)
         {
-            LogCollection tmp = new LogCollection();
-            tmp.Node = e.node;
-            tmp.Type = e.type;
-            tmp.Message = e.msg;
-            LogDataGrid.Add(tmp);
-           
+            lock (this)
+            {
+                Thread.Sleep(100);
+                LogCollection tmp = new LogCollection();
+                tmp.Node = e.node;
+                tmp.Type = e.type;
+                tmp.Message = e.msg;
+                tmp.TimeStamp = e.dateTime;
+                tmp.Title = e.title;
+                LogDataGrid.Add(tmp);
+            }
         }
 
 
         public MainViewModel()
         {
             LogModel.onLogRecieved += OnLogReceived;
-            LogDataGrid = new AsyncObservableCollection<LogCollection>();
-            
+            //LogDataGrid = new AsyncObservableCollection<LogCollection>();
+
             NodeName = new NotifierProperty<string>("Node Name");
-            
+
             ProcessNodeName = new NotifierProperty<string>("Node Name");
             ProcessName = new NotifierProperty<string>("ClientTest.exe");
             ProcessPort = new NotifierProperty<int>(8000);
             ProcessArguments = new NotifierProperty<string>("8001 Walter");
             ProcessPath = new NotifierProperty<string>("");
-          
-            addNode("Node1");
+
+            TestEnvironment.addNode("Node1");
             string[] processArgs = { "8001", "Walter" };
-            this.addProcess("ClientTest.exe", "Node1", 8000, "",processArgs );
-            
+            TestEnvironment.addProcess("ClientTest.exe", "Node1", 8000, "", processArgs);
+
         }
 
         #region Commands
@@ -182,12 +197,12 @@ namespace DistributedTestEnvironmentUI.ViewModels
         private void RemoveProcess()
         {
             DistributedProcessModel tmpProc = CurrentProcess;
-            findNode(CurrentProcess.FrameworkHost).removeProcess(CurrentProcess);
-            
+            TestEnvironment.findNode(CurrentProcess.FrameworkHost).removeProcess(CurrentProcess);
+
 
         }
 
-  
+
 
         public ICommand StartProcessCmd
         {
@@ -222,7 +237,7 @@ namespace DistributedTestEnvironmentUI.ViewModels
             //this.startProcess(ProcHostName, ProcPort, ProcName);
             CurrentProcess.stopProcess();
         }
-#endregion
+        #endregion
 
 
         #region AddNode
@@ -242,7 +257,7 @@ namespace DistributedTestEnvironmentUI.ViewModels
         }
         private void AddANode()
         {
-            this.addNode(NodeName.PropVal);
+            TestEnvironment.addNode(NodeName.PropVal);
             addNodeView.Close();
         }
 
@@ -273,12 +288,12 @@ namespace DistributedTestEnvironmentUI.ViewModels
         {
             char del = ' ';
             string[] argus = ProcessArguments.PropVal.Split(del);
-            this.addProcess(ProcessName.PropVal, ProcessNodeName.PropVal, ProcessPort.PropVal, ProcessPath.PropVal, argus);
+            TestEnvironment.addProcess(ProcessName.PropVal, ProcessNodeName.PropVal, ProcessPort.PropVal, ProcessPath.PropVal, argus);
             addProcessView.Close();
         }
         #endregion
 
-
+        /*
 
         #region TestEnvironment
 
@@ -451,10 +466,10 @@ namespace DistributedTestEnvironmentUI.ViewModels
         {
             proc.Routing.Faults.ReverseOrderMessage = false;
         }
-    }
+    
 
         #endregion
-
-
+        */
     }
+}
 

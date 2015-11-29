@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 
-namespace DistributedTestEnvironmentUI.MVVM_Tools
+namespace DTEModels.MVVM_Tools
 {
     /// <summary>
     /// This class facilitates associating a key binding in XAML markup to a command

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DistributedTestEnvironmentUI.Models
+namespace ClientTest.Models
 {
     public static class EventForwarder
     {

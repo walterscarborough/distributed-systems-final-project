@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 
 
-namespace DistributedTestEnvironmentUI.MVVM_Tools
+namespace DTEModels.MVVM_Tools
 {
     public class DelegateCommand : ICommand
     {

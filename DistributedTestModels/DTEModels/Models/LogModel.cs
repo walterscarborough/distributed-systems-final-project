@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
-namespace DistributedTestEnvironmentUI.Models
+namespace DTEModels.Models
 {
     public enum ELogflag
     {
         LOG,
-        ENGINE,
-        CRITICAL,
+        WARNING,
+        ERROR,
+        FATAL,
         CUSTOM
     }
 
@@ -19,40 +21,55 @@ namespace DistributedTestEnvironmentUI.Models
         public string node;
         public string type;
         public string msg;
+        public string dateTime;
+        public string title;
 
-        public LogEventArgs(string Node, string Type, string Msg)
+
+        public LogEventArgs(string Node, DateTime logTime, string title, string Type, string Msg)
         {
             node = Node;
             type = Type;
             msg = Msg;
+            dateTime = logTime.ToShortDateString() + "," + logTime.ToLongTimeString();
+            this.title = title;
         }
     }
 
+    
     public static class LogModel
     {
         public static string EngineName { get; set; }
         private static List<String> logdata = new List<string>();
 
         public static event EventHandler<LogEventArgs> onLogRecieved;
-
-        public static void LogMessage( string msg, ELogflag flag, string title = "")
+       // static object lockObj = new object();
+        public static void LogMessage( string msg, string sender, ELogflag flag, string title)
         {
+          
             StringBuilder sb = new StringBuilder();
             string type = "";
-            sb.Append("[" + EngineName + "]");
+            
+            DateTime dt = DateTime.Now;
+
+            sb.Append("[" + dt.ToShortDateString() + "," + dt.ToLongTimeString() + "]");
+            sb.Append("[" + sender + "]");
             switch (flag)
             {
                 case ELogflag.LOG:
                     sb.Append("[LOG]");
                     type = "Log";
                     break;
-                case ELogflag.ENGINE:
-                    sb.Append("[ENGINE]");
-                    type = "Engine";
+                case ELogflag.WARNING:
+                    sb.Append("[WARNING]");
+                    type = "Warning";
                     break;
-                case ELogflag.CRITICAL:
-                    sb.Append("[CRITICAL]");
-                    type = "Critical";
+                case ELogflag.ERROR:
+                    sb.Append("[ERROR]");
+                    type = "Error";
+                    break;
+                case ELogflag.FATAL:
+                    sb.Append("[FATAL]");
+                    type = "FATAL";
                     break;
                 case ELogflag.CUSTOM:
                     title = title.ToUpper();
@@ -64,10 +81,13 @@ namespace DistributedTestEnvironmentUI.Models
                     type = "Unknown";
                     break;
             }
+            
             sb.Append(msg);
             Console.WriteLine(sb.ToString());
             logdata.Add(sb.ToString());
-            EventForwarder.Forward<LogEventArgs>(null, onLogRecieved, new LogEventArgs(title, type, msg));
+            
+            EventForwarder.Forward<LogEventArgs>(null, onLogRecieved, new LogEventArgs(sender, dt, title, type, msg));
+           
         }
 
         public static void ClearLogData()

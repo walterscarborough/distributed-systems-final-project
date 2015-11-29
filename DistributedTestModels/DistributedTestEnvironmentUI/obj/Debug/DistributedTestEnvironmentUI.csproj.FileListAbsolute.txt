@@ -19,9 +19,7 @@ C:\Users\Jon\Documents\SWE Masters\Distributed\DistributedTestModels\Distributed
 C:\Users\Jon\Documents\GitHub\distributed-systems\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.exe.config
 C:\Users\Jon\Documents\GitHub\distributed-systems\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.exe
 C:\Users\Jon\Documents\GitHub\distributed-systems\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.pdb
-C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.exe.config
-C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.exe
-C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.pdb
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.csprojResolveAssemblyReference.cache
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\AddNode.g.cs
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\AddProcess.g.cs
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\MainView.g.cs
@@ -29,6 +27,11 @@ C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestM
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI_MarkupCompile.cache
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI_MarkupCompile.lref
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.exe.config
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.exe
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.pdb
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DTEModels.dll
+C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DTEModels.pdb
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\AddNode.baml
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\AddProcess.baml
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\MainView.baml
@@ -37,4 +40,3 @@ C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestM
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.csproj.GenerateResource.Cache
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.exe
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.pdb
-C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI.csprojResolveAssemblyReference.cache

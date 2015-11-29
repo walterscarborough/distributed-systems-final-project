@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using DistributedTestEnvironmentUI.MVVM_Tools;
+using DTEModels.MVVM_Tools;
 
-namespace DistributedTestEnvironmentUI.Models
+namespace DTEModels.Models
 {
 
         public class MessageEventArgs : EventArgs
@@ -89,9 +89,17 @@ namespace DistributedTestEnvironmentUI.Models
             return tmp;
         }
 
+        public void sendMessage(string msg)
+        {
+            TcpIPClientModel cm = new TcpIPClientModel();
+            cm.OpenCommPort(physicalHost, physicalPort);
+            cm.SendMsg(msg);
+            cm.close();
+        }
+
         public void forwardMessage(object sender, MessageEventArgs e) 
         {
-            LogModel.LogMessage("Forwarding: " + e.Data, ELogflag.LOG, "Whatever");
+            LogModel.LogMessage("Forwarding: " + e.Data, this.frameworkHost + ":" + this.frameworkPort ,ELogflag.LOG, "Forward Message");
             string msg = applyFaults(e.Data);
             if (msg != null)
             {
