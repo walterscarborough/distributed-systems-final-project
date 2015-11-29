@@ -24,7 +24,6 @@ C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestM
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\AddProcess.g.cs
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\Views\MainView.g.cs
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\App.g.cs
-C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI_MarkupCompile.cache
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\obj\Debug\DistributedTestEnvironmentUI_MarkupCompile.lref
 C:\Users\Jon\Documents\GitHub\distributed-systems-final-project\DistributedTestModels\DistributedTestEnvironmentUI\bin\Debug\DistributedTestEnvironmentUI.exe.config
