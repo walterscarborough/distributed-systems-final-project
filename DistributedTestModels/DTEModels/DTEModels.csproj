@@ -54,8 +54,11 @@
     <Compile Include="Models\DistributedProcessModel.cs" />
     <Compile Include="Models\EventForwarder.cs" />
     <Compile Include="Models\FaultInjectionModel.cs" />
+    <Compile Include="Models\LogCollection.cs" />
     <Compile Include="Models\LogModel.cs" />
     <Compile Include="Models\RouteModel.cs" />
+    <Compile Include="Models\StatisticsMessageModel.cs" />
+    <Compile Include="Models\StatisticsModel.cs" />
     <Compile Include="Models\TcpIPClientModel.cs" />
     <Compile Include="Models\TcpIPServerModel.cs" />
     <Compile Include="Models\TestEnvironmentModel.cs" />

@@ -12,15 +12,15 @@
             <TextBlock Text="{Binding ProcessName}" Margin="5" />
         </HierarchicalDataTemplate>
     </Window.Resources>
-	<Window.Background>
-		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-			<GradientStop Color="#FFB2B5F0" Offset="0"/>
-			<GradientStop Color="White" Offset="1"/>
-		</LinearGradientBrush>
-	</Window.Background>
-	<Window.Effect>
-		<DropShadowEffect/>
-	</Window.Effect>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFB2B5F0" Offset="0"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
     <DockPanel>
 
 
@@ -56,33 +56,41 @@
             </Viewbox>
         </StackPanel>
         <Viewbox>
-        <Grid Margin="0,0,0,5">
-            <TextBox TextWrapping="Wrap" IsReadOnly="True" Text="{Binding Path=CurrentProcess.FrameworkHost}" Margin="130,27,261,341"/>
-            <TextBlock HorizontalAlignment="Left" Margin="39,27,0,0" TextWrapping="Wrap" Text="Host Name" VerticalAlignment="Top" Width="73"/>
-            <TextBox IsReadOnly="True" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.ProcessName}" Margin="130,51,261,318"/>
-            <TextBox IsReadOnly="True" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.FrameworkPort}" Margin="130,73,261,295"/>
+            <Grid Margin="0,0,0,5">
+                <TextBox TextWrapping="Wrap" IsReadOnly="True" Text="{Binding Path=CurrentProcess.FrameworkHost}" Margin="130,27,261,341"/>
+                <TextBlock HorizontalAlignment="Left" Margin="39,27,0,0" TextWrapping="Wrap" Text="Host Name" VerticalAlignment="Top" Width="73"/>
+                <TextBox IsReadOnly="True" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.ProcessName}" Margin="130,51,261,318"/>
+                <TextBox IsReadOnly="True" TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.FrameworkPort}" Margin="130,73,261,295"/>
 
-            <TextBlock HorizontalAlignment="Left" Margin="39,50,0,0" TextWrapping="Wrap" Text="Process Name" VerticalAlignment="Top" Width="86"/>
-            <TextBlock HorizontalAlignment="Left" Margin="38,73,0,0" TextWrapping="Wrap" Text="Port Number" VerticalAlignment="Top" Width="74"/>
-            <Button Content="Start" Width="70" Margin="300,27,167,333" Command="{Binding StartProcessCmd}">
+                <TextBlock HorizontalAlignment="Left" Margin="39,50,0,0" TextWrapping="Wrap" Text="Process Name" VerticalAlignment="Top" Width="86"/>
+                <TextBlock HorizontalAlignment="Left" Margin="38,73,0,0" TextWrapping="Wrap" Text="Port Number" VerticalAlignment="Top" Width="74"/>
+                <Button Content="Start" Width="70" Margin="300,27,167,333" Command="{Binding StartProcessCmd}">
 
-            </Button>
+                </Button>
 
-            <Button Content="Stop" Width="70" Margin="300,65,167,295" Command="{Binding StopProcessCmd}"/>
+                <Button Content="Stop" Width="70" Margin="300,65,167,295" Command="{Binding StopProcessCmd}"/>
 
-            <GroupBox Header="Fault Injection" HorizontalAlignment="Left" Height="78" Margin="10,112,0,0" VerticalAlignment="Top" Width="472">
+                <GroupBox Header="Fault Injection" HorizontalAlignment="Left" Height="78" Margin="10,112,0,0" VerticalAlignment="Top" Width="472">
 
-            </GroupBox>
-            <CheckBox Content="Delay" Margin="111,135,374,233" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.DelayMessage, Mode=TwoWay}" Foreground="#FF240FF7"/>
-            <TextBox TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.Routing.Faults.Delay_ms}" Margin="168,135,317,236"/>
-            <CheckBox Content="Duplicate" Margin="25,159,435,208" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.DuplicateMessage, Mode=TwoWay}" Foreground="#FF240FF7" />
-            <CheckBox Content="Corrupt" Margin="238,135,229,237" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.CorruptMessage, Mode=TwoWay}" Foreground="#FF240FF7" />
-            <CheckBox Content="Lose" Margin="25,135,462,230" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.LoseMessage, Mode=TwoWay}" Foreground="#FF240FF7"/>
-            <CheckBox Content="Out of Order" Margin="111,159,334,213" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.ReverseOrderMessage, Mode=TwoWay}" Foreground="#FF240FF7"/>
-            <GroupBox Header="Process" HorizontalAlignment="Left" Height="97" Margin="10,10,0,0" VerticalAlignment="Top" Width="472"/>
+                </GroupBox>
+                <CheckBox Content="Delay" Margin="111,135,374,233" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.DelayMessage, Mode=TwoWay}" Foreground="#FF240FF7"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding Path=CurrentProcess.Routing.Faults.Delay_ms}" Margin="168,135,317,236"/>
+                <CheckBox Content="Duplicate" Margin="25,159,435,208" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.DuplicateMessage, Mode=TwoWay}" Foreground="#FF240FF7" />
+                <CheckBox Content="Corrupt" Margin="238,135,229,237" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.CorruptMessage, Mode=TwoWay}" Foreground="#FF240FF7" />
+                <CheckBox Content="Lose" Margin="25,135,462,230" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.LoseMessage, Mode=TwoWay}" Foreground="#FF240FF7"/>
+                <CheckBox Content="Out of Order" Margin="111,159,334,213" IsThreeState="False" IsChecked="{Binding Path=CurrentProcess.Routing.Faults.ReverseOrderMessage, Mode=TwoWay}" Foreground="#FF240FF7"/>
+                <GroupBox Header="Process" HorizontalAlignment="Left" Height="97" Margin="10,10,0,0" VerticalAlignment="Top" Width="472"/>
 
+                <GroupBox Header="Statistics" HorizontalAlignment="Left" Height="182" Margin="10,197,0,0" VerticalAlignment="Top" Width="472"/>
+                <TextBox TextWrapping="Wrap" IsReadOnly="True" Text="{Binding Path=CurrentProcess.Routing.Stats.MessagesReceived}" Margin="88,223,394,145"/>
+                <TextBlock HorizontalAlignment="Left" Margin="27,225,0,0" TextWrapping="Wrap" Text="Messages" VerticalAlignment="Top" Width="54"/>
+                <TextBox TextWrapping="Wrap" IsReadOnly="True" Text="{Binding Path=CurrentProcess.Routing.Stats.BytesReceived}" Margin="210,223,274,145"/>
+                <TextBlock HorizontalAlignment="Left" Margin="168,225,0,0" TextWrapping="Wrap" Text="Bytes" VerticalAlignment="Top" Width="54"/>
+                <TextBox TextWrapping="Wrap" IsReadOnly="True" Text="{Binding Path=CurrentProcess.Routing.Stats.AverageMessageSize}" Margin="412,223,72,145"/>
+                <TextBlock HorizontalAlignment="Left" Margin="327,225,0,0" TextWrapping="Wrap" Text="Average Bytes" VerticalAlignment="Top" Width="84"/>
+                <DataGrid ItemsSource="{Binding CurrentProcess.Routing.Stats.MsgDataGrid}" AutoGenerateColumns="True" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="5.287,21.412" Height="105" Width="440" Margin="25,257,0,0" />
 
-        </Grid>
+            </Grid>
 
         </Viewbox>
     </DockPanel>

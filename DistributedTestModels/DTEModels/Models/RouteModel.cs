@@ -45,8 +45,16 @@ namespace DTEModels.Models
                 OnPropertyChanged("Faults");
             }
         }
-     
-        
+
+        private StatisticsModel stats = new StatisticsModel();
+
+        public StatisticsModel Stats
+        {
+            get { return stats; }
+            set { stats = value;
+            OnPropertyChanged("Stats");
+            }
+        }
 
 
         public RouteModel(string host, int port, bool local)
@@ -99,7 +107,13 @@ namespace DTEModels.Models
 
         public void forwardMessage(object sender, MessageEventArgs e) 
         {
+
+
             LogModel.LogMessage("Forwarding: " + e.Data, this.frameworkHost + ":" + this.frameworkPort ,ELogflag.LOG, "Forward Message");
+
+
+
+            Stats.AddMessage(new LogEventArgs(this.frameworkHost + ":" + this.frameworkPort, DateTime.Now, "Message Received", "Log", e.Data));
             string msg = applyFaults(e.Data);
             if (msg != null)
             {
