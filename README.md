@@ -6,7 +6,7 @@ Distributed Test Environment (DTE) is a distributed systems testing tool that gi
 
 The DTE works by intercepting messages bound for a port.  Developers can then inject faults into messages, which are forwarded to the recipient node.  The process of intercepting messages allows developers the freedom to use any programming language in their target implementation without modification, and makes recreating faults trivial.
 
-![DTE Screenshot](/documentaton/images/dte-screenshot.png?raw=true "DTE Screenshot")
+![DTE Screenshot](../blob/master/documentaton/images/dte-screenshot.png?raw=true "DTE Screenshot")
 
 ## Why DTE?
 
